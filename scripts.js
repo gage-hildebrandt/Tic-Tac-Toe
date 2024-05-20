@@ -58,7 +58,7 @@ function checkWinner() {
         if(cellA == '' || cellB == '' || cellC == '') {
             continue;
         }
-        if(cellA == cell && cellB == cellC) {
+        if(cellA == cellB && cellB == cellC) {
             roundWon = true;
             break;
         }
@@ -77,5 +77,9 @@ function checkWinner() {
 }
 
 function restartGame() {
-
+    currentPlayer = 'X';
+    options = ['', '', '', '', '', '', '', '', ''];
+    statusText.textContent = `${currentPlayer}'s turn`;
+    cells.forEach(cell => cell.textContent = '');
+    running = true;
 }
